@@ -1,7 +1,10 @@
+import MyChart from "./MyChart";
+import "./LearnApexChart.css";
+
 export function LearnApexChart() {
   return (
-    <div>
-      <h1>Learn Apex Chart</h1>
+    <div className="learn-apex-chart">
+      <MyChart />
     </div>
   );
 }
