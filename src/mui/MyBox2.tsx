@@ -9,7 +9,7 @@ interface MyBox2Props {
 export default function MyBox2({ sizing }: MyBox2Props) {
     const boxes = Array.from({ length: 8 }, (_, i) => {
         return (
-            <Grid item xs={6}>
+            <Grid item xs={6} key={i.toString()}>
                 <MyBox num={i} sizing={{aspectRatio: "4/3"}} />
             </Grid>
         ) 
