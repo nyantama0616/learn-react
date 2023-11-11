@@ -2,13 +2,13 @@ import { Box, TextField, Button } from "@mui/material";
 import { Grid } from "@mui/material";
 import ISignInManager from "./interfaces/ISignInManager";
 import SizingProps from "./interfaces/SizingProps";
-
+import useSignInManager  from "./hooks/useSignInManager";
 interface SignInFormProps {
-    signInManager: ISignInManager
     sizing?: SizingProps
 }
 
-export default function SignInForm({signInManager, sizing }: SignInFormProps) {
+export default function SignInForm({ sizing }: SignInFormProps) {
+    const signInManager: ISignInManager = useSignInManager();
     return (
         <Box sx={{ backgroundColor: "#cccccc", ...sizing }}>
             <h1>Sign In</h1>
