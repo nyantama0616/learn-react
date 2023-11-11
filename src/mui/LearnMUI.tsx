@@ -2,6 +2,7 @@ import { Grid, Box } from '@mui/material';
 import {AspectRatio} from '@mui/joy';
 import { BoxOwnProps } from '@mui/system';
 import MyBox from './MyBox';
+import MyBox2 from './MyBox2';
 
 export default function LearnMUI() {
     return (
@@ -17,7 +18,7 @@ export default function LearnMUI() {
                         <MyBox num={2} sizing={{height: "500px"}} />
                     </Grid>
                     <Grid item xs={2}>
-                        <MyBox num={3} sizing={{ aspectRatio: "16/9" }} />
+                        <MyBox2 />
                     </Grid>
                 </Grid>
         </Box>
