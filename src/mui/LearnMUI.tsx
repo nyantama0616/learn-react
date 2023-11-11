@@ -3,8 +3,12 @@ import {AspectRatio} from '@mui/joy';
 import { BoxOwnProps } from '@mui/system';
 import MyBox from './MyBox';
 import MyBox2 from './MyBox2';
+import SignInForm from './SignInForm';
+import useSignInManager from './hooks/useSignInManager';
 
 export default function LearnMUI() {
+    const signInManager = useSignInManager();
+    
     return (
         <Box>
                 <Grid container spacing={2}>
@@ -15,7 +19,7 @@ export default function LearnMUI() {
                         <MyBox num={1} sizing={{aspectRatio: "16/9"}} />
                     </Grid>
                     <Grid item xs={8}>
-                        <MyBox num={2} sizing={{height: "500px"}} />
+                        <SignInForm signInManager={signInManager} sizing={{height: "500px"}} />
                     </Grid>
                     <Grid item xs={2}>
                         <MyBox2 />
