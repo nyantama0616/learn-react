@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import { LearnApexChart } from './apexcharts/LearnApexChart';
 import LearnMUI from './mui/LearnMUI';
+import Layout from './Layout';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <Router>
         <Routes>
           {/* <Route path="/" element={<LearnApexChart />}></Route> */}
-          <Route path="/" element={<LearnMUI />}></Route>
+          <Route path="/" element={<Layout mainComponent={<LearnMUI />}/>}></Route>
         </Routes>
       </Router>
     </div>
