@@ -1,7 +1,8 @@
 import { useState } from "react";
+import IAuthManager from "../interfaces/IAuthManager";
 import ISignInManager from "../interfaces/ISignInManager";
 
-export default function useSignInManager(): ISignInManager {
+export default function useSignInManager(authManager: IAuthManager): ISignInManager {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     
@@ -18,7 +19,8 @@ export default function useSignInManager(): ISignInManager {
         console.log({
             email,
             password
-        });   
+        });
+        authManager.authenticate(email, password);
     }
 
     return {
