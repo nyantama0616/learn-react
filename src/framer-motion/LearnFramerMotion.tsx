@@ -3,24 +3,24 @@ import {Grid} from "@mui/material";
 import TopPage from "./TopPage";
 import Profile from "./Profile";
 import {useState, useMemo, useEffect} from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import SlideInOut from "./animations/SlideInOut"; 
 
-enum Page {
+enum PageStatus {
     TOP_PAGE,
     PROFILE
 }
 export default function LearnFramerMotion() {
-    const [status, setStatus] = useState(Page.TOP_PAGE);
-    const showTopPage = useMemo(() => status === Page.TOP_PAGE, [status]);
-    const showProfile = useMemo(() => status === Page.PROFILE, [status]);
+    const [status, setStatus] = useState(PageStatus.TOP_PAGE);
+    const showTopPage = useMemo(() => status === PageStatus.TOP_PAGE, [status]);
+    const showProfile = useMemo(() => status === PageStatus.PROFILE, [status]);
 
     function toggleStatus() {
         setStatus((status) => {
             switch(status) {
-                case Page.TOP_PAGE:
-                    return Page.PROFILE;
-                case Page.PROFILE:
-                    return Page.TOP_PAGE;
+                case PageStatus.TOP_PAGE:
+                    return PageStatus.PROFILE;
+                case PageStatus.PROFILE:
+                    return PageStatus.TOP_PAGE;
             }
         });
     }
@@ -31,8 +31,8 @@ export default function LearnFramerMotion() {
             <Grid container spacing={2} justifyContent="center">
                 <Grid item xs={4}>
                     <Box sx={{position: "relative", height: "600px"}} className="slide-container">
-                        <SlideInOut isVisible={showTopPage}><TopPage sizing={{height: "600px"}}/></SlideInOut>
-                        <SlideInOut isVisible={showProfile}><Profile sizing={{height: "600px"}}/></SlideInOut>
+                        <Page key="top-page" isVisible={showTopPage}><TopPage sizing={{height: "600px"}}/></Page>
+                        <Page key="profile" isVisible={showProfile}><Profile sizing={{height: "600px"}}/></Page>
                     </Box>
                 </Grid>
                 <Grid item xs={12}>
@@ -43,11 +43,13 @@ export default function LearnFramerMotion() {
     );
 }
 
-interface SlideInOut {
+interface PageProps {
+    key: string
     isVisible: boolean
     children: React.ReactNode
 }
-function SlideInOut({isVisible, children}: SlideInOut) {
+
+function Page({key, isVisible, children}: PageProps) {
     return (
         <Box sx={{
             position: "absolute", //これ書かないと、要素が縦に並んでしまう
@@ -56,16 +58,9 @@ function SlideInOut({isVisible, children}: SlideInOut) {
             width: "100%",
             height: "100%",
         }}>
-            <AnimatePresence>
-                {isVisible && <motion.div
-                    key="top-page"
-                    initial={{ x: 500, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    exit={{ x: -500, opacity: 0 }}
-                    >
-                    {children}
-                </motion.div>}
-            </AnimatePresence>
+            <SlideInOut key={key} isVisible={isVisible}>
+                {children}
+            </SlideInOut>
         </Box>
-    )
+    );
 }
