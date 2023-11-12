@@ -4,6 +4,9 @@ html {
 
 body {
   height: 100%;
+
+  /* ポップアップアニメーションなどで画面から出た要素を表示しないようにする */
+  overflow: hidden; 
 }
 
 #root {

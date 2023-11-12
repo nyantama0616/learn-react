@@ -5,6 +5,7 @@ import Profile from "./Profile";
 import {useState, useMemo, useEffect} from "react";
 import SlideInOut from "./animations/SlideInOut";
 import GhostInOut from "./animations/GhostInOut";
+import PopInOut from "./animations/PopInOut";
 
 enum PageStatus {
     TOP_PAGE,
@@ -59,9 +60,9 @@ function Page({key, isVisible, children}: PageProps) {
             width: "100%",
             height: "100%",
         }}>
-            <GhostInOut key={key} isVisible={isVisible}>
+            <PopInOut key={key} isVisible={isVisible}>
                 {children}
-            </GhostInOut>
+            </PopInOut>
         </Box>
     );
 }
