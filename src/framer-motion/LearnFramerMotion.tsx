@@ -3,7 +3,8 @@ import {Grid} from "@mui/material";
 import TopPage from "./TopPage";
 import Profile from "./Profile";
 import {useState, useMemo, useEffect} from "react";
-import SlideInOut from "./animations/SlideInOut"; 
+import SlideInOut from "./animations/SlideInOut";
+import GhostInOut from "./animations/GhostInOut";
 
 enum PageStatus {
     TOP_PAGE,
@@ -58,9 +59,9 @@ function Page({key, isVisible, children}: PageProps) {
             width: "100%",
             height: "100%",
         }}>
-            <SlideInOut key={key} isVisible={isVisible}>
+            <GhostInOut key={key} isVisible={isVisible}>
                 {children}
-            </SlideInOut>
+            </GhostInOut>
         </Box>
     );
 }
