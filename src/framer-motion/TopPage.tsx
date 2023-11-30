@@ -1,13 +1,13 @@
 import {Box} from "@mui/material";
-import SizingProps from "../mui/interfaces/SizingProps";
+import { SxProps } from "@mui/system";
 
 interface MyPageProps {
-    sizing?: SizingProps
+    sx?: SxProps
 }
 
-export default function TopPage({sizing}: MyPageProps) {
+export default function TopPage({sx}: MyPageProps) {
     return (
-        <Box sx={{backgroundColor: "#aacccc", ...sizing}}>
+        <Box sx={{backgroundColor: "#aacccc", ...sx}}>
             <h1>Top Page</h1>
         </Box>
     )

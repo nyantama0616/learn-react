@@ -11,13 +11,13 @@ export default function LearnMUI() {
             <AuthProvider>
                 <Grid container spacing={2}>
                     <Grid item xs={12}>
-                        <MyBox num={0} sizing={{ aspectRatio: "4/1" }} />
+                        <MyBox num={0} sx={{ aspectRatio: "4/1" }} />
                     </Grid>
                     <Grid item xs={2}>
-                        <MyBox num={1} sizing={{aspectRatio: "16/9"}} />
+                        <MyBox num={1} sx={{aspectRatio: "16/9"}} />
                     </Grid>
                     <Grid item xs={8}>
-                        <SignInForm sizing={{height: "500px"}} />
+                        <SignInForm sx={{height: "500px"}} />
                     </Grid>
                     <Grid item xs={2}>
                         <MyBox2 />

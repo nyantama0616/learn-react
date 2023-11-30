@@ -1,16 +1,16 @@
-import { Box, TextField, Button } from "@mui/material";
-import { Grid } from "@mui/material";
+import { Box, TextField, Button, Grid } from "@mui/material";
+import { SxProps } from "@mui/system";
+
 import ISignInManager from "./interfaces/ISignInManager";
-import SizingProps from "./interfaces/SizingProps";
 import useSignInManager  from "./hooks/useSignInManager";
 interface SignInFormProps {
-    sizing?: SizingProps
+    sx?: SxProps
 }
 
-export default function SignInForm({ sizing }: SignInFormProps) {
+export default function SignInForm({ sx }: SignInFormProps) {
     const signInManager: ISignInManager = useSignInManager();
     return (
-        <Box sx={{ backgroundColor: "#cccccc", ...sizing }}>
+        <Box sx={{ backgroundColor: "#cccccc", ...sx }}>
             <h1>Sign In</h1>
             <form action="">
                 <Grid container spacing={2} justifyContent="center">

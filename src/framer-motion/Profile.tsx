@@ -1,13 +1,13 @@
-import {Box} from "@mui/material";
-import SizingProps from "../mui/interfaces/SizingProps";
+import { Box } from "@mui/material";
+import { SxProps } from "@mui/system";
 
 interface MyPageProps {
-    sizing?: SizingProps
+    sx?: SxProps
 }
 
-export default function Profile({sizing}: MyPageProps) {
+export default function Profile({sx}: MyPageProps) {
     return (
-        <Box sx={{backgroundColor: "#9999ff", ...sizing}}>
+        <Box sx={{backgroundColor: "#9999ff", ...sx}}>
             <h1>Profile</h1>
         </Box>
     )

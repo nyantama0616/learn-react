@@ -12,9 +12,9 @@ function App() {
       <Router>
         <Routes>
           {/* <Route path="/" element={<LearnApexChart />}></Route> */}
-          {/* <Route path="/" element={<Layout mainComponent={<LearnMUI />}/>}></Route> */}
-          {/* <Route path="/learn-frame-motion" element={<Layout mainComponent={<LearnFramerMotion />}/>}></Route> */}
-          <Route path="/learn-di" element={<Layout mainComponent={<LearnDI />}/>}></Route>
+          <Route path="/" element={<Layout mainComponent={<LearnMUI />}/>}></Route>
+          <Route path="/learn-frame-motion" element={<Layout mainComponent={<LearnFramerMotion />}/>}></Route>
+          {/* <Route path="/learn-di" element={<Layout mainComponent={<LearnDI />}/>}></Route> */}
         </Routes>
       </Router>
     </div>

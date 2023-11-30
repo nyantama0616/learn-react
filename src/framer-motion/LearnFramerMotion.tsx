@@ -33,8 +33,8 @@ export default function LearnFramerMotion() {
             <Grid container spacing={2} justifyContent="center">
                 <Grid item xs={4}>
                     <Box sx={{position: "relative", height: "600px"}} className="slide-container">
-                        <Page key="top-page" isVisible={showTopPage}><TopPage sizing={{height: "600px"}}/></Page>
-                        <Page key="profile" isVisible={showProfile}><Profile sizing={{height: "600px"}}/></Page>
+                        <Page key="top-page" isVisible={showTopPage}><TopPage sx={{height: "600px"}}/></Page>
+                        <Page key="profile" isVisible={showProfile}><Profile sx={{height: "600px"}}/></Page>
                     </Box>
                 </Grid>
                 <Grid item xs={12}>
