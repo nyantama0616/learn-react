@@ -1,10 +1,17 @@
 import { Box, Button, Grid, TextField } from "@mui/material"
 
 interface SignupFormProps {
+    /**
+     * フォームのタイトルです。
+     */
     title: string;
     buttonType?: "contained" | "outlined";
     backgroundColor?: string;
 }
+
+/**
+ * サインアップ用のフォームです。
+ */
 export default function SignupForm({ title, buttonType, backgroundColor }: SignupFormProps) {
     return (
         <Box sx={{backgroundColor: backgroundColor}}>

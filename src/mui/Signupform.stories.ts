@@ -21,12 +21,18 @@ const meta: Meta<typeof SignupForm> = {
 
 export default meta;
 
+/**
+    * English Signup Form
+ */
 export const EnglishSignupForm = {
     args: {
         title: 'Sign Up',
     }
 };
 
+/**
+ * Japanese Signup Form
+ */
 export const JapaneseSignupForm = {
     args: {
         title: 'サインアップ',
