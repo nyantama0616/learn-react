@@ -10,6 +10,11 @@ const meta: Meta<typeof SignupForm> = {
                 type: 'select',
             },
         },
+        backgroundColor: {
+            control: {
+                type: 'color',
+            },
+        },
     },
 }
 

@@ -2,11 +2,12 @@ import { Box, Button, Grid, TextField } from "@mui/material"
 
 interface SignupFormProps {
     title: string;
-    buttonType: "contained" | "outlined";
+    buttonType?: "contained" | "outlined";
+    backgroundColor?: string;
 }
-export default function SignupForm({ title, buttonType }: SignupFormProps) {
+export default function SignupForm({ title, buttonType, backgroundColor }: SignupFormProps) {
     return (
-        <Box>
+        <Box sx={{backgroundColor: backgroundColor}}>
             <form action="">
                 <Grid container spacing={2}>
                     <Grid item xs={12}>
