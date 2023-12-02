@@ -2,8 +2,9 @@ import { Box, Button, Grid, TextField } from "@mui/material"
 
 interface SignupFormProps {
     title: string;
+    buttonType: "contained" | "outlined";
 }
-export default function SignupForm({ title }: SignupFormProps) {
+export default function SignupForm({ title, buttonType }: SignupFormProps) {
     return (
         <Box>
             <form action="">
@@ -45,7 +46,7 @@ export default function SignupForm({ title }: SignupFormProps) {
                     </Grid>
                     <Grid item xs={12}>
                         <Box sx={{display: "flex", justifyContent: "center"}}>
-                            <Button variant="contained">Submit</Button>
+                            <Button variant={buttonType}>Submit</Button>
                         </Box>
                     </Grid>
                 </Grid>

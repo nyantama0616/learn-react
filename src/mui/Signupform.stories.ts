@@ -4,6 +4,13 @@ import SignupForm from './SignupForm';
 const meta: Meta<typeof SignupForm> = {
     component: SignupForm,
     title: 'Components/SignupForm',
+    argTypes: {
+        buttonType: {
+            control: {
+                type: 'select',
+            },
+        },
+    },
 }
 
 export default meta;
