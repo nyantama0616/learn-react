@@ -16,6 +16,7 @@ const meta: Meta<typeof SignupForm> = {
             },
         },
     },
+    tags: ["autodocs"]
 }
 
 export default meta;
